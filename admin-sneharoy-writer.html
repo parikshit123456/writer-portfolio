@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Add Post</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  h1, h2 {
+    color: #29817d;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  h3, h2{
+    color: #ffffff;
+    background-color: rgb(27, 124, 124);
+    padding: 0.2rem 0.3rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    background: #29817d;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #246e6b;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #postList {
+    list-style: none;
+    padding: 0;
+  }
+
+  #postList li {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 10px;
+    border-left: 5px solid #29817d;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  input[type="file"] {
+    border: none;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 1rem;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .file-upload {
+  margin-bottom: 1rem;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #29817d;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background: #246e6b;
+}
+
+#image {
+  display: none;
+}
+
+#fileName {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.upload-actions .upload-btn,
+.upload-actions button {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+#image {
+  display: none;
+}
+
+#loginSection button{
+  width: 100%;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+  <h1>Admin Panel</h1>
+
+  <!-- Simple Login -->
+  <div id="loginSection">
+    <input type="password" id="adminPassword" placeholder="Enter Admin Password" />
+    <button class="b" onclick="checkLogin()">Login</button>
+  </div>
+  <div id="adminSection" class="hidden">
+    <h2>Add New Post</h2>
+<input type="text" id="title" placeholder="Post Title" required>
+<select id="category">
+  <option value="">Select Category</option>
+  <option value="story">Story</option>
+  <option value="poem">Poem</option>
+  <option value="poetry">Poetry</option>
+  <option value="blog">Blog</option>
+  <option value="thoughts">Thoughts</option>
+</select>
+
+<textarea id="content" rows="6" placeholder="Write your content..."></textarea>
+
+<div class="upload-actions">
+  <label for="image" class="upload-btn">Choose Image</label>
+  <input type="file" id="image" accept="image/*" />
+  <button onclick="savePost()">Publish Post</button>
+  <button onclick="clearAllPosts()" style="background: #8a040f;">Clear All Posts</button>
+</div>
+
+<h3>All Posts</h3>
+<ul id="postList"></ul>
+  </div>
+  <script src="posts.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const imageInput = document.getElementById("image");
+    if (imageInput) {
+      imageInput.addEventListener("change", function () {
+        const fileName = this.files[0]?.name || "No image selected";
+        document.getElementById("fileName").textContent = fileName;
+      });
+    }
+  });
+
+  function clearAllPosts() {
+  const confirmClear = confirm("Are you sure you want to delete ALL posts? This cannot be undone.");
+  if (confirmClear) {
+    localStorage.removeItem("posts");
+    alert("All posts have been cleared!");
+    renderAdminPosts();
+  }
+}
+</script>
+</body>
+</html>

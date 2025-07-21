@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sneha Roy - Writer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <i class="fas fa-feather-alt"></i>
+    <span>Sneha Roy - Writer</span>
+  </div>
+  <nav>
+    <ul id="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#blog">Writings</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+</header>
+
+<section class="hero" id="home">
+  <div class="background-slides" id="heroSlides">
+    <img src="https://picsum.photos/id/1015/1920/1080" alt="Writing Background 1" class="active">
+    <img src="https://picsum.photos/id/1016/1920/1080" alt="Writing Background 2">
+    <img src="https://picsum.photos/id/1018/1920/1080" alt="Writing Background 3">
+  </div>
+  <div style="position:relative; z-index:1; text-align: center;">
+  <h1>Welcome to My Creative World</h1>
+  <p>
+    I'm Sneha Roy, a creative writer and freelance content specialist crafting compelling stories 
+    and powerful messages for brands and individuals.
+  </p>
+  <strong style="display: block; margin: 20px 0; font-size: 25px;">“I don’t just write to be read—I write to be felt.”</strong>
+  <button class="btn" onclick="scrollToSection('blog')">Explore My Writings</button>
+</div>
+</section>
+
+<section id="blog">
+  <h2 class="section-title" style="text-align:center;">My Writings</h2>
+  <div class="blog-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="story">Story</button>
+    <button class="filter-btn" data-filter="poem">Poem</button>
+    <button class="filter-btn" data-filter="poetry">Poetry</button>
+    <button class="filter-btn" data-filter="blog">Blog</button>
+    <button class="filter-btn" data-filter="thoughts">Thoughts</button>
+  </div>
+  <div class="blog-grid" id="blogGrid">
+    <!-- Posts will be rendered here -->
+  </div>
+</section>
+
+<!-- Updated Post Overlay in index.html -->
+<div class="post-overlay" id="postOverlay">
+  <div class="post-content-box">
+    <span class="close-overlay" onclick="closePostOverlay()">&times;</span>
+    <h2 id="overlayTitle"></h2>
+    <img id="overlayImage" src="" alt="Post Image" class="overlay-image" />
+    <div id="overlayContent" class="overlay-content formatted-content"></div>
+  </div>
+</div>
+
+<section id="about" class="aboute">
+  <div class="about">
+    <h2 class="section-title">About Me</h2>
+    <!-- <img src="c:\Users\USER\OneDrive\Desktop\sneha.jpg" alt="Alice Johnson"> -->
+   <p>
+  Hello, I’m Sneha Roy — a passionate and professional writer with over 5 years of experience in the world of words. 
+  My journey began with a love for storytelling, poetry, and creative expression. Writing has always been my voice, 
+  allowing me to share thoughts, emotions, and ideas in a meaningful way.
+</p>
+
+<p>
+  I specialize in blog writing, social media content, and creative writing, helping individuals and businesses communicate 
+  effectively and grow their online presence. Whether it’s crafting compelling brand stories or engaging content, 
+  I bring clarity, creativity, and purpose to every project I take on.
+</p>
+
+<p>
+  Alongside writing, I also lend my voice to storytelling—through drama, recitation, voice-overs, and advertisements. 
+  My voice work adds a unique dimension to my creative journey, allowing me to connect with audiences in both written 
+  and spoken form.
+</p>
+
+<p>
+  With a strong belief in the power of words, I aim to create content that not only informs but inspires.
+</p>
+  </div>
+  <div class="profile-image">
+    <img src="images/sneha.jpg" alt="Alice Johnson">
+  </div>
+</section>
+
+<section id="services">
+  <div class="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/blog writing.jpg" alt="Blog Writing">
+        <h3>Blog Writing</h3>
+        <p>Crafting engaging blog content that drives traffic and builds authority.</p>
+        <strong>From $50/post</strong>
+      </div>
+
+      <div class="service-card">
+        <img src="images/social media content.jpg" alt="Social Media Content">
+        <h3>Social Media Content</h3>
+        <p>Designing impactful social media posts that engage your audience.</p>
+        <strong>From $30/post</strong>
+      </div>
+
+      <div class="service-card">
+        <img src="images/creative-writing.png" alt="Creative Writing">
+        <h3>Creative Writing</h3>
+        <p>Bringing imagination to life through short stories, poetry, and novels.</p>
+        <strong>Custom Pricing</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials">
+  <h2 class="section-title" style="text-align:center;">Client Testimonials</h2>
+  <div id="testimonialSlider">
+    <div class="testimonial active">
+      <img src="https://picsum.photos/id/1025/200/200 " alt="Client 1">
+      <p>"Working with Alice was a pleasure! Her words brought our brand to life in ways we never imagined."</p>
+      <strong>- Sarah Thompson, CEO</strong>
+    </div>
+    <div class="testimonial">
+      <img src="https://picsum.photos/id/1026/200/200 " alt="Client 2">
+      <p>"Alice's attention to detail and storytelling ability made a huge impact on our campaign success."</p>
+      <strong>- James Wilson, Marketer</strong>
+    </div>
+    <div class="testimonial">
+      <img src="https://picsum.photos/id/1027/200/200 " alt="Client 3">
+      <p>"Her creative approach transformed our blog into a go-to resource for our audience."</p>
+      <strong>- Lisa Adams, Blogger</strong>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <form action="https://formsubmit.co/parikshitbca@gmail.com" method="POST">
+           <input type="text" name="name" placeholder="Your Name" required />
+           <input type="email" name="email" placeholder="Your Email" required />
+           <input type="text" name="subject" placeholder="Subject" />
+           <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+           <input type="hidden" name="_captcha" value="false">
+           <input type="hidden" name="_template" value="box">
+           <button type="submit" class="btnn">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> sneharoysonai18@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91 7908601812</p>
+        <p><i class="fas fa-map-marker-alt"></i> 735132, jalpaiguri, west bengal, India</p>
+        <p><i class="fas fa-clock"></i> Mon-Fri 9am - 5pm EST</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-about">
+      <div class="footer-logo"><i class="fas fa-feather-alt"></i> <span>Sneha Roy — Writer & Voice Artist</span></div>
+      <p>I bring stories to life through words and voice, helping brands and individuals connect, inspire, and make a lasting impression.</p>
+      <div class="social-icons">
+         <a href="https://www.facebook.com/share/16tw4S7Aw3/" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+         <a href="https://www.instagram.com/sonai6267?igsh=MXh0ZmNheGVvbjNqaw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+         <a href="https://youtube.com/@sneharoysonai18?si=zpOJawnmWCY5SOxI" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+         <a href="https://linkedin.com" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><i class="fas fa-map-marker-alt">  </i>735132, jalpaiguri, west bengal, India</p>
+      <p><i class="fas fa-envelope">  </i> sneharoysonai18@gmail.com</p>
+      <p><i class="fas fa-phone">  </i> +91 7908601812</p>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright">
+  &copy; 2025 Sneha Roy. All rights reserved.
+  <h4>Powered By - Apex Tech Solution</h4>
+</div>
+
+<script src="script.js"></script>
+<script src="posts.js"></script>
+</body>
+</html>
